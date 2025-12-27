@@ -12,6 +12,7 @@ Early programming relied on **rule-based systems**, where a specific rule had to
 With the limitations of traditional programming, **Artificial Intelligence (AI)** emerged.  
 - AI aims to **mimic human brain functionality** to perform intelligent tasks.  
 - Computers are programmed to learn, reason, and make decisions.
+**Example:** AI-powered game bots that can play chess or Go, learning strategies beyond hard-coded rules.
 
 ---
 
@@ -25,6 +26,7 @@ With the limitations of traditional programming, **Artificial Intelligence (AI)*
   - **Semi-Supervised Learning** – uses a combination of labeled and unlabeled data  
 
 > ML works best with **structured data**.
+**Example:** Predicting housing prices based on features like location, square footage, and number of bedrooms.
 
 ---
 
@@ -66,7 +68,7 @@ During training:
 
 This learning mechanism enables the network to improve performance over time.
 
-
+*Example:** DL for **image recognition**, like detecting cats vs dogs in photos.
 For a clear visual explanation of how an ANN structure and its connections work, see the diagram in *“How does Artificial Neural Network (ANN) algorithm work? Simplified!”* on Analytics Vidhya:  
 https://www.analyticsvidhya.com/blog/2014/10/ann-work-simplified/ :contentReference[oaicite:0]{index=0}
 
