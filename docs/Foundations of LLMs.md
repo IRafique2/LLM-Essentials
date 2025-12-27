@@ -85,6 +85,11 @@ https://www.analyticsvidhya.com/blog/2014/10/ann-work-simplified/ :contentRefere
 - They learn patterns in data and can **generate synthetic content**.  
 - LLMs can be broadly divided into:
 
+The Evolution from traditional AI/ML/DL workflows to generative LLMs was shown below.
+![Evolution from traditional AI/ML/DL workflows to generative LLM](images/aivsmlvsds.png)
+
+---
+
 ### 1. Generative Models
 - Generate new content **similar to training data**, but not exact copies.  
 - Example: Text generation, image generation.
@@ -95,10 +100,9 @@ https://www.analyticsvidhya.com/blog/2014/10/ann-work-simplified/ :contentRefere
    
 The diagram below shows a comparison between **traditional programming/AI approaches** and **generative models**, illustrating the evolution to Large Language Models (LLMs):
 
-![Comparison of Traditional Programming with Generative Models](images/a.png)
+![Comparison of Traditional Programming with Generative Models](images/tdvsds.png)
 
-> **Figure:** Evolution from traditional AI/ML/DL workflows to generative LLMs.
-
+---
 
 ## Key Takeaways
 
