@@ -68,7 +68,6 @@ During training:
 
 This learning mechanism enables the network to improve performance over time.
 
-### Source & Diagram Reference
 
 For a clear visual explanation of how an ANN structure and its connections work, see the diagram in *“How does Artificial Neural Network (ANN) algorithm work? Simplified!”* on Analytics Vidhya:  
 https://www.analyticsvidhya.com/blog/2014/10/ann-work-simplified/ :contentReference[oaicite:0]{index=0}
@@ -100,7 +99,7 @@ The Evolution from traditional AI/ML/DL workflows to generative LLMs was shown b
    
 The diagram below shows a comparison between **traditional programming/AI approaches** and **generative models**, illustrating the evolution to Large Language Models (LLMs):
 
-![Comparison of Traditional Programming with Generative Models](images/tdvsds.png)
+![Comparison of Traditional Programming with Generative Models](../images/tdvsds.png)
 
 ---
 
