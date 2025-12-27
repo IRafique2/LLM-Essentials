@@ -41,9 +41,7 @@ An **Artificial Neural Network (ANN)** is a computing model that mimics the brai
 
 The basic computation for a neuron in a multilayer perceptron (MLP) is:
 
-\[
-a = f\Big(\sum_{i=1}^{n} w_i x_i + b \Big)
-\]
+`a = f(Σ (w_i * x_i) + b)`
 
 Where:
 - \(x_i\) = input features  
@@ -85,7 +83,7 @@ https://www.analyticsvidhya.com/blog/2014/10/ann-work-simplified/ :contentRefere
 - LLMs can be broadly divided into:
 
 The Evolution from traditional AI/ML/DL workflows to generative LLMs was shown below.
-![Evolution from traditional AI/ML/DL workflows to generative LLM](../images/aivsmlvsds.png)
+![Evolution from traditional AI/ML/DL workflows to generative LLM](../images/aivsmlvsdl.png)
 
 ---
 
