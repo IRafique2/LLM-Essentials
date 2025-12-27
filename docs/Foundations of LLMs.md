@@ -68,7 +68,7 @@ During training:
 
 This learning mechanism enables the network to improve performance over time.
 
-*Example:** DL for **image recognition**, like detecting cats vs dogs in photos.
+**Example:** DL for **image recognition**, like detecting cats vs dogs in photos.
 For a clear visual explanation of how an ANN structure and its connections work, see the diagram in *“How does Artificial Neural Network (ANN) algorithm work? Simplified!”* on Analytics Vidhya:  
 https://www.analyticsvidhya.com/blog/2014/10/ann-work-simplified/ :contentReference[oaicite:0]{index=0}
 
