@@ -1,4 +1,4 @@
-```markdown
+
 # Day 02 — Natural Language & NLP Fundamentals
 
 ## 1. Natural Language (NL)
