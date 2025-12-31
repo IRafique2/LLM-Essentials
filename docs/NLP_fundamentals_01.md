@@ -15,9 +15,9 @@
 
 ### Key Characteristics
 
-* **Ambiguous** — same word or sentence can mean different things
-* **Context-dependent** — meaning changes with situation
-* **Continuously evolving** — new words appear regularly
+* **Ambiguous** — same word or sentence can mean different things.
+* **Context-dependent** — meaning changes with situation.
+* **Continuously evolving** — new words appear regularly.
 * **Rich in idioms, metaphors, and cultural cues**
 
 > Unlike programming languages, natural language was **not designed for machines**, which makes it difficult for computers to understand.
@@ -185,10 +185,3 @@ These materials solely belong to their respective owners and are used here only 
 
 ---
 
-If you want, next I can:
-
-* ✔️ Format **Day 03** in the same GitHub style
-* ✔️ Add **simple diagrams (ASCII / Mermaid)**
-* ✔️ Optimize content for **beginners vs advanced readers**
-
-Just say **“Day 03 next”** 👍
