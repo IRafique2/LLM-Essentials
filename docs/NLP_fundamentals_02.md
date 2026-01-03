@@ -180,7 +180,7 @@ answer(A, count(B, (city(B), loc(B, C), const(C, countryid(USA))), A))
   ```
   "Wise men talk because they have something to say; fools, because they have to say something." (Plato)
   ```
----
+
 
 ##  High-Level NLP Applications
 
