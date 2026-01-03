@@ -195,7 +195,7 @@ Understanding these semantic relations is important for many NLP applications:
 ---
 
 
----
+
 
 ## 3. How Computers “Understand” Language
 
