@@ -17,9 +17,41 @@ There are two closely related goals:
 
    > How likely is this entire sentence?
 
-   [
-   P(w_1, w_2, w_3, \dots, w_n)
-   ]
+
+
+𝑃
+(
+𝑤
+1
+,
+𝑤
+2
+,
+𝑤
+3
+,
+…
+,
+𝑤
+𝑛
+)
+P(w
+1
+	​
+
+,w
+2
+	​
+
+,w
+3
+	​
+
+,…,w
+n
+	​
+
+)
 
 2. **Next-Word Prediction**
 
