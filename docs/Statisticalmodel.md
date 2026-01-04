@@ -273,4 +273,3 @@ These materials solely belong to their respective owners and are used here only 
 **No copyright infringement is intended.**
 
 
-Just say **Day 05** 👌
