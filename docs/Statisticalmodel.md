@@ -1,7 +1,15 @@
-#  Day 04 — Statistical Language Models & N-Grams
+Got it 👍
+GitHub **does NOT render LaTeX equations inside `[` `]`** unless you use **inline `$...$`**, **block `$$...$$`**, or **code blocks**.
+Below is your **Day 04 content rewritten with GitHub-compatible math formatting**, while keeping the article fluent and readable.
+
+You can paste this **directly into GitHub** and it will render correctly.
+
+---
+
+# 📅 Day 04 — Statistical Language Models & N-Grams
 
 Modern Large Language Models may look magical, but at their core lies a very simple idea:
- **predicting what word comes next**.
+👉 **predicting what word comes next**.
 
 Before neural networks and transformers, this idea was formalized using **statistical language models**. Understanding these models is crucial because they form the **conceptual foundation of today’s LLMs**.
 
@@ -13,53 +21,21 @@ A **language model (LM)** assigns probabilities to sequences of words.
 
 There are two closely related goals:
 
-1. **Sentence Probability**
+### 1. Sentence Probability
 
-   > How likely is this entire sentence?
+How likely is this entire sentence?
 
+```
+P(w1, w2, w3, ..., wn)
+```
 
+### 2. Next-Word Prediction
 
-𝑃
-(
-𝑤
-1
-,
-𝑤
-2
-,
-𝑤
-3
-,
-…
-,
-𝑤
-𝑛
-)
-P(w
-1
-	​
+Given previous words, what word comes next?
 
-,w
-2
-	​
-
-,w
-3
-	​
-
-,…,w
-n
-	​
-
-)
-
-2. **Next-Word Prediction**
-
-   > Given previous words, what word comes next?
-
-   [
-   P(w_n \mid w_1, w_2, \dots, w_{n-1})
-   ]
+```
+P(wn | w1, w2, ..., wn-1)
+```
 
 Any model that can compute either of these is called a **Language Model**.
 
@@ -77,7 +53,7 @@ Language models are everywhere, often invisibly:
 
 * **Machine Translation**
 
-  * *“Heavy rainfall”* is preferred over *“Big rainfall”*
+  * *“Heavy rainfall”* sounds better than *“Big rainfall”*
   * *“Festival of lights”* sounds more natural than *“Festival of lamps”*
 
 * **Spelling Correction**
@@ -86,7 +62,7 @@ Language models are everywhere, often invisibly:
 
 * **Autocomplete & Search**
 
-In all these cases, the model chooses the **most probable sequence of words**.
+In all these cases, the system selects the **most probable word sequence**.
 
 ---
 
@@ -96,217 +72,222 @@ Consider the sentence:
 
 > **“The monsoon season has begun”**
 
-To compute its probability, we apply the **Chain Rule of Probability**:
+Using the **Chain Rule of Probability**:
 
-[
-P(w_1, w_2, \dots, w_n) = P(w_1) \cdot P(w_2 \mid w_1) \cdot \dots \cdot P(w_n \mid w_1, \dots, w_{n-1})
-]
+```
+P(w1, w2, ..., wn) =
+P(w1) × P(w2 | w1) × P(w3 | w1, w2) × ... × P(wn | w1, ..., wn-1)
+```
 
-So this becomes:
+For our sentence:
 
-[
-P(\text{The}) \times P(\text{monsoon} \mid \text{The}) \times P(\text{season} \mid \text{The monsoon}) \times \dots
-]
+```
+P(The) × P(monsoon | The) × P(season | The monsoon) × P(has | The monsoon season) × ...
+```
 
 ### The Problem
 
-In real language:
-
-* Contexts get very long
+* Contexts grow very long
 * Exact word sequences are rare
-* Data quickly becomes sparse
+* Data becomes sparse quickly
 
-This makes estimating probabilities unreliable.
+This makes probability estimation unreliable.
 
 ---
 
 ## The Markov Assumption: Simplifying the Problem
 
-To make language modeling practical, we introduce the **Markov Assumption**:
+To make language modeling practical, we apply the **Markov Assumption**:
 
-> The next word depends only on the **previous k words**, not the entire history.
+> The next word depends only on the **previous k words**, not the full history.
 
-This approximation allows us to ignore distant context and focus on recent words.
+This allows models to focus on **local context**.
 
 ---
 
 ## N-Gram Language Models
 
-An **N-gram model** predicts a word using only the previous **N-1 words**.
+An **N-gram model** predicts a word using only the previous **N−1 words**.
 
 ### Common Types
 
 * **Unigram**
-  [
-  P(\text{begun})
-  ]
+
+```
+P(begun)
+```
 
 * **Bigram**
-  [
-  P(\text{begun} \mid \text{has})
-  ]
+
+```
+P(begun | has)
+```
 
 * **Trigram**
-  [
-  P(\text{begun} \mid \text{season has})
-  ]
 
-📌 **Key Insight**
-An **N-gram language model** is equivalent to an **(N−1)-order Markov model**.
+```
+P(begun | season has)
+```
+
+📌 **Key Insight:**
+An **N-gram language model** is an **(N−1)-order Markov model**.
 
 ---
 
 ## Estimating Probabilities with MLE
 
-The simplest way to estimate N-gram probabilities is **Maximum Likelihood Estimation (MLE)**.
+The simplest estimation method is **Maximum Likelihood Estimation (MLE)**.
 
-### Bigram Example
+### Bigram Probability
 
-[
-P(w_i \mid w_{i-1}) = \frac{\text{count}(w_{i-1}, w_i)}{\text{count}(w_{i-1})}
-]
+```
+P(wi | wi-1) = count(wi-1, wi) / count(wi-1)
+```
 
-This uses **relative frequencies** from the training data.
+This relies entirely on **relative frequencies** from training data.
 
 ---
 
 ## The Data Sparsity Problem
 
-MLE works well **only if test data looks like training data**.
+MLE assumes that test data resembles training data.
 
-Consider:
+### Example
 
 **Training Data**
 
-* *enjoyed the movie*
-* *enjoyed the food*
-* *enjoyed the game*
+* enjoyed the movie
+* enjoyed the food
+* enjoyed the game
 
 **Test Data**
 
-* *enjoyed the concert*
-* *enjoyed the festival*
+* enjoyed the concert
+* enjoyed the festival
 
-Since these bigrams never appeared during training:
+Since these bigrams never appeared:
 
-[
-P(\text{concert} \mid \text{enjoyed the}) = 0
-]
+```
+P(concert | enjoyed the) = 0
+```
 
-This causes:
+This leads to:
 
-* Zero probability sentences
-* Undefined perplexity
+* Zero-probability sentences
+* Broken perplexity
 * Poor generalization
 
 ---
 
 ## Smoothing: Fixing Zero Probabilities
 
-To handle unseen N-grams, we use **smoothing techniques**.
+To handle unseen word sequences, we use **smoothing**.
 
 ### Laplace (Add-One) Smoothing
 
-The idea:
+Idea:
 
-> Pretend we saw every word **one extra time**.
+> Pretend every word appeared **once more** than it actually did.
 
-[
-P_{\text{Add-1}}(w_i \mid w_{i-1}) =
-\frac{c(w_{i-1}, w_i) + 1}{c(w_{i-1}) + |V|}
-]
+```
+P(wi | wi-1) =
+(count(wi-1, wi) + 1) / (count(wi-1) + |V|)
+```
 
-This ensures:
-
-* No zero probabilities
-* Better robustness
-
-⚠️ But Add-1 can be **too aggressive**, especially for large vocabularies.
+✔ Prevents zero probabilities
+⚠ Can over-smooth for large vocabularies
 
 ---
 
 ### Add-k Smoothing
 
-Instead of adding 1, add a smaller constant *k* (e.g., 0.1 or 0.01).
+Instead of adding 1, add a smaller constant:
 
-This provides a softer correction.
+```
+k = 0.1 or 0.01
+```
+
+This produces more balanced probability estimates.
 
 ---
 
 ### Unigram Prior Smoothing
 
-Instead of adding equal mass to all words:
-
-* Use unigram probabilities as a **prior**
-* Common words receive higher pseudo-counts
-
-This approach is more realistic and flexible.
+* Use unigram probabilities as prior knowledge
+* Frequent words get higher pseudo-counts
+* More linguistically realistic
 
 ---
 
 ## Back-off and Interpolation
 
-As **N increases**, context improves but data sparsity worsens.
+As **N increases**, context improves but sparsity worsens.
 
 ### Back-off
 
-* Use trigram if available
-* Otherwise fall back to bigram
-* Otherwise unigram
+* Try trigram
+* If unseen → use bigram
+* If unseen → use unigram
 
 ### Interpolation
 
-* Combine all models:
-  [
-  P = \lambda_1 P_{\text{uni}} + \lambda_2 P_{\text{bi}} + \lambda_3 P_{\text{tri}}
-  ]
+Combine all models:
 
-📌 **Interpolation usually performs better** than pure back-off.
+```
+P = λ1 × Puni + λ2 × Pbi + λ3 × Ptri
+```
+
+📌 **Interpolation usually outperforms back-off.**
 
 ---
 
 ## Limitations of N-Gram Models
 
-Despite their usefulness, N-gram models have serious limitations:
-
-* Cannot capture **long-range dependencies**
-* Context window is fixed and small
-* Vocabulary grows rapidly
-* Memory and computation scale poorly
+* Cannot model long-range dependencies
+* Fixed context window
+* Large memory requirements
+* Vocabulary explosion
 
 📌 Example:
 
 > *“The project, which he had been working on for months, was finally approved.”*
-> The dependency between *project* and *approved* is too far apart for N-grams.
+> The dependency between *project* and *approved* is too distant.
 
 ---
 
 ## Why N-Grams Still Matter
 
-Even though modern LLMs use neural networks:
+Despite their limitations:
 
-* N-grams introduced **probabilistic language modeling**
-* They formalized **next-word prediction**
-* Many ideas (context, smoothing, back-off) inspired neural approaches
+* Introduced probabilistic language modeling
+* Formalized next-word prediction
+* Inspired neural language models
 
-👉 **LLMs are powerful generalizations of this same idea**, trained at massive scale.
+👉 **LLMs are essentially scaled, neural versions of this same idea.**
 
 ---
 
 ## ✅ Key Takeaway (Day 04)
 
-* Language modeling is about **predicting word sequences**
-* N-gram models use probability, the chain rule, and Markov assumptions
-* Smoothing is essential to handle unseen data
-* N-grams laid the groundwork for modern Large Language Models
+* Language models predict word sequences
+* N-grams use probability + Markov assumptions
+* Smoothing is essential for real-world data
+* N-grams laid the foundation for modern LLMs
 
 ---
 
 ## 📌 Acknowledgement
 
 Various contents in this presentation have been taken from different books, lecture notes, and web resources.
-These materials solely belong to their respective owners and are used here only for educational and explanatory purposes.
+These materials solely belong to their respective owners and are used here only for educational clarification.
 **No copyright infringement is intended.**
 
+---
 
-Just say **“Day 05”** 🚀
+If you want next:
+
+* 🚀 **Day 05 — Neural Language Models (From N-grams to RNNs)**
+* 📊 Mermaid diagrams for GitHub
+* 📱 Short LinkedIn/Twitter summaries
+
+Just say **Day 05** 👌
