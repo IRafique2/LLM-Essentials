@@ -1,15 +1,7 @@
-Got it 👍
-GitHub **does NOT render LaTeX equations inside `[` `]`** unless you use **inline `$...$`**, **block `$$...$$`**, or **code blocks**.
-Below is your **Day 04 content rewritten with GitHub-compatible math formatting**, while keeping the article fluent and readable.
-
-You can paste this **directly into GitHub** and it will render correctly.
-
----
-
-# 📅 Day 04 — Statistical Language Models & N-Grams
+#  Day 04 — Statistical Language Models & N-Grams
 
 Modern Large Language Models may look magical, but at their core lies a very simple idea:
-👉 **predicting what word comes next**.
+ **predicting what word comes next**.
 
 Before neural networks and transformers, this idea was formalized using **statistical language models**. Understanding these models is crucial because they form the **conceptual foundation of today’s LLMs**.
 
@@ -75,8 +67,7 @@ Consider the sentence:
 Using the **Chain Rule of Probability**:
 
 ```
-P(w1, w2, ..., wn) =
-P(w1) × P(w2 | w1) × P(w3 | w1, w2) × ... × P(wn | w1, ..., wn-1)
+P(w1, w2, ..., wn) = P(w1) × P(w2 | w1) × P(w3 | w1, w2) × ... × P(wn | w1, ..., wn-1)
 ```
 
 For our sentence:
@@ -190,12 +181,11 @@ Idea:
 > Pretend every word appeared **once more** than it actually did.
 
 ```
-P(wi | wi-1) =
-(count(wi-1, wi) + 1) / (count(wi-1) + |V|)
+P(wi | wi-1) =(count(wi-1, wi) + 1) / (count(wi-1) + |V|)
 ```
 
-✔ Prevents zero probabilities
-⚠ Can over-smooth for large vocabularies
+* Prevents zero probabilities
+*  Can over-smooth for large vocabularies
 
 ---
 
@@ -237,7 +227,7 @@ Combine all models:
 P = λ1 × Puni + λ2 × Pbi + λ3 × Ptri
 ```
 
-📌 **Interpolation usually outperforms back-off.**
+ **Interpolation usually outperforms back-off.**
 
 ---
 
@@ -248,7 +238,7 @@ P = λ1 × Puni + λ2 × Pbi + λ3 × Ptri
 * Large memory requirements
 * Vocabulary explosion
 
-📌 Example:
+ Example:
 
 > *“The project, which he had been working on for months, was finally approved.”*
 > The dependency between *project* and *approved* is too distant.
@@ -263,11 +253,11 @@ Despite their limitations:
 * Formalized next-word prediction
 * Inspired neural language models
 
-👉 **LLMs are essentially scaled, neural versions of this same idea.**
+ **LLMs are essentially scaled, neural versions of this same idea.**
 
 ---
 
-## ✅ Key Takeaway (Day 04)
+##  Key Takeaway (Day 04)
 
 * Language models predict word sequences
 * N-grams use probability + Markov assumptions
@@ -276,18 +266,11 @@ Despite their limitations:
 
 ---
 
-## 📌 Acknowledgement
+##  Acknowledgement
 
 Various contents in this presentation have been taken from different books, lecture notes, and web resources.
 These materials solely belong to their respective owners and are used here only for educational clarification.
 **No copyright infringement is intended.**
 
----
-
-If you want next:
-
-* 🚀 **Day 05 — Neural Language Models (From N-grams to RNNs)**
-* 📊 Mermaid diagrams for GitHub
-* 📱 Short LinkedIn/Twitter summaries
 
 Just say **Day 05** 👌
