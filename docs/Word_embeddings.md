@@ -301,9 +301,7 @@ Context → Target
 * Works well with frequent words
 * Smooths information across context
 
-
-[ CBOW illustration](../images/cbow.png))
-
+![Cbow Illustration](../images/cbow.png)
 ---
 
 ## Skip-Gram — Predict the Context
@@ -416,7 +414,7 @@ Word2Vec:
 * Proved meaning can emerge from context
 * Inspired all modern embedding techniques
 
-👉 **LLMs are not replacements — they are evolutions.**
+ **LLMs are not replacements — they are evolutions.**
 
 ---
 
@@ -451,7 +449,7 @@ Instead of predicting words sequentially:
 * Produces more stable embeddings
 * Faster convergence than Word2Vec
 
-🔗 GloVe paper (Stanford):
+ GloVe paper (Stanford):
 [https://nlp.stanford.edu/projects/glove/](https://nlp.stanford.edu/projects/glove/)
 
 ---
@@ -535,4 +533,4 @@ Various contents in this presentation have been taken from different books, lect
 These materials solely belong to their respective owners and are used here only for educational clarification.
 **No copyright infringement is intended.**
 
-Just say **Day 06** 🚀
+
