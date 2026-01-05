@@ -86,33 +86,11 @@ Over time, NLP has evolved through **three major embedding paradigms**:
 
 Each paradigm builds on the previous one, improving **semantic understanding**.
 ![Types of Word Embeddings](../images/wd.png)
----
 
-Great idea 👍 — this will make **Day 05** much more complete and conceptually strong.
-
-Below is a **clean, article-style extension** you can **add to Day 05**, structured so the reader clearly understands the **evolution of embeddings**:
-
-* Frequency-based → Prediction-based → Contextual
-* **Detailed TF-IDF**
-* **Word2Vec stays mostly the same**
-* **Light but clear intro to BERT**
-
-This is **GitHub-ready** and fluent to read.
 
 ---
 
-# 🔍 Beyond Word2Vec — Types of Word Embeddings
 
-Word2Vec is powerful, but it is **not the only way** to represent text numerically.
-Over time, NLP has evolved through **three major embedding paradigms**:
-
-1. **Frequency-based embeddings**
-2. **Prediction-based embeddings**
-3. **Contextual embeddings**
-
-Understanding all three helps you see **why LLMs work the way they do today**.
-
----
 
 ##  Frequency-Based Embeddings
 
