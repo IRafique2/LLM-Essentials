@@ -70,7 +70,7 @@ At each timestep:
 
 ---
 
-️## Why Decoding Strategies Matter
+️### Why Decoding Strategies Matter
 
 **Definition:**
 Decoding strategies control how **confident, diverse, or creative** the generated text is.
