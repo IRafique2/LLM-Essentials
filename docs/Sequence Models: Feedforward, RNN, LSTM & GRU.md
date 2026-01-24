@@ -189,10 +189,10 @@ Imagine you are **reading a story** and need to remember key events:
 
 ### Diagram: LSTM Cell 
 
-```
+
 ![LSTM Cell](../images/lstm.png)
 
----
+
 
 ### PyTorch Example: LSTM
 
