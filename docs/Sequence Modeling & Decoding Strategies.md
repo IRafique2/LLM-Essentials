@@ -42,7 +42,7 @@ If `"deep"` came after `"love"`, the probability of `"learning"` **increases**.
 
 ---
 
-️## What Is Decoding? 
+## What Is Decoding? 
 
 **Definition:**
 Decoding is the process of converting a model’s **probability distribution over vocabulary** into **actual words** during text generation.
@@ -70,7 +70,7 @@ At each timestep:
 
 ---
 
-️### Why Decoding Strategies Matter
+## Why Decoding Strategies Matter
 
 **Definition:**
 Decoding strategies control how **confident, diverse, or creative** the generated text is.
@@ -313,7 +313,7 @@ Keep the **smallest set of tokens** whose **cumulative probability ≥ p**.
 * Modern LLMs often combine **Temperature + Top-P** for best results
 
 ---
-Acknowledgement
+## Acknowledgement
 
 Various contents in this material have been adapted from lecture slides, textbooks, and online resources.
 All rights belong to their respective owners and are used strictly for educational purposes.
