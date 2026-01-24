@@ -118,7 +118,7 @@ Combine H = [Hidden F ; Hidden B]
 
 ---
 
-##  Long Short-Term Memory (LSTM) — Detailed Discussion
+##  Long Short-Term Memory (LSTM) 
 
 **Definition:**
 LSTM is a type of RNN designed to **remember long-term information** and mitigate the vanishing gradient problem. Introduced by Hochreiter & Schmidhuber (1997), LSTM has **gates** that control the flow of information.
@@ -213,7 +213,7 @@ print("Cell state:", c_n.shape)
 
 ---
 
-##  Gated Recurrent Unit (GRU) — Detailed Discussion
+##  Gated Recurrent Unit (GRU) 
 
 **Definition:**
 GRU is a simplified LSTM, introduced by Cho et al., which **combines cell and hidden states** into one and uses **two gates**: **update** and **reset**.
