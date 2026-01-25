@@ -53,7 +53,7 @@ The Transformer follows the classic **Encoder–Decoder architecture**, but with
 
 ### High-Level Structure
 
-![LSTM Cell](../images/download.png)
+![LSTM Cell](../images/images.png)
 
 * **Encoder** → Understands the input
 * **Decoder** → Generates the output
