@@ -201,6 +201,7 @@ The model **cannot attend to the future token**.
 ### Definition
 
 **Multi-Head Attention** runs **multiple attention operations in parallel**, each learning different relationships.
+
 ![Types of Word Embeddings](../images/multiheaded.png)
 ---
 
