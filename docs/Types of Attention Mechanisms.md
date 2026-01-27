@@ -133,7 +133,8 @@ Each token attends mostly to itself.
 **Masked Self-Attention** prevents tokens from attending to **future tokens**.
 
 Used in **Transformer decoders**.
-![Types of Word Embeddings](../images/masked self attention.png)
+
+![Types of Word Embeddings](../images/masked.png)
 ---
 
 ### Why Masking Is Needed
