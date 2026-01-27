@@ -234,17 +234,8 @@ These methods **learn prompts or small modules** instead of full model updates.
 
 ---
 
-## 9. Practical Prompting Guidelines
 
-✔ Be explicit with instructions
-✔ Provide structure (lists, steps, roles)
-✔ Use delimiters for clarity
-✔ Show examples when accuracy matters
-✔ Iterate — prompting is experimental
-
----
-
-## 10. Key Takeaways
+## 9. Key Takeaways
 
 * Prompting is the primary interface to LLMs
 * Zero‑shot → Few‑shot → Fine‑tuning is a spectrum
