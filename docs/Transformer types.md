@@ -1,7 +1,7 @@
 # Day 09 — Types of Transformer Architectures
 
 > **Not all Transformers are built the same.**
-> Depending on the task — understanding text, generating text, or transforming one sequence into another — different **Transformer architectures** are used.
+> Depending on the task ,understanding text, generating text, or transforming one sequence into another  different **Transformer architectures** are used.
 
 
 
