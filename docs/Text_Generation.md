@@ -118,10 +118,10 @@ Main categories:
 
 Formally, given a sequence:
 Given a sequence:
+
 $$
 X = (x_1, x_2, ..., x_T)
 $$
-
 A causal language model learns:
 
 $$
