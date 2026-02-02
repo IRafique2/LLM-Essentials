@@ -1,15 +1,3 @@
-Below is a fully rewritten **Day 14 GitHub Markdown article** with:
-
-* Clean professional tone
-* Perfect GitHub-compatible math formatting
-* Proper structure and readability
-* No emojis
-* A complete Acknowledgment section
-
-You can directly paste this into your repository.
-
----
-
 # Day 14: Text Generation in Large Language Models (LLMs)
 
 ## 1. Introduction
@@ -367,15 +355,6 @@ tokens = tokenizer("Exercise improves health", return_tensors="pt")
 
 Models minimize negative log-likelihood loss:
 
-$$
-Loss = - \sum_{t} \log P(y_t \mid y_{<t}, X)
-$$
-
-Where:
-
-* $y_t$ is the target token
-* $y_{<t}$ are previous output tokens
-* $X$ is the input sequence
 
 ---
 
@@ -451,12 +430,4 @@ This article is prepared for educational purposes and is inspired by a combinati
 
 All external concepts and methods belong to their respective authors and institutions. This content is intended strictly for learning and knowledge-sharing.
 
----
 
-If you want, I can also prepare:
-
-* Day 15: Decoding Strategies (Greedy, Beam Search, Top-k, Top-p)
-* Day 16: Fine-tuning Text Generation Models
-* A complete GitHub-ready series structure for all days
-
-Just tell me what day you want next.
