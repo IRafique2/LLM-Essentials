@@ -1,5 +1,4 @@
 #   Text Generation in Large Language Models (LLMs)
----
 
 ## 1. What is Text Generation?
 
@@ -118,16 +117,79 @@ Main categories:
 **Causal Language Modeling** is a text generation approach where a model learns to predict the **next token** in a sequence using only the **previous tokens**.
 
 Formally, given a sequence:
-$$
-[
-X = (x_1, x_2, ..., x_T)
-]
-$$
+Given a sequence:
+
+𝑋
+=
+(
+𝑥
+1
+,
+𝑥
+2
+,
+.
+.
+.
+,
+𝑥
+𝑇
+)
+X=(x
+1
+	​
+
+,x
+2
+	​
+
+,...,x
+T
+	​
+
+)
+
 A causal language model learns:
 
-[
-P(x_t \mid x_1, x_2, ..., x_{t-1})
-]
+𝑃
+(
+𝑥
+𝑡
+∣
+𝑥
+1
+,
+𝑥
+2
+,
+.
+.
+.
+,
+𝑥
+𝑡
+−
+1
+)
+P(x
+t
+	​
+
+∣x
+1
+	​
+
+,x
+2
+	​
+
+,...,x
+t−1
+	​
+
+)
+
+This means the model generates text autoregressively, one token at a time
 
 This means the model generates text **autoregressively**, one word at a time.
 
