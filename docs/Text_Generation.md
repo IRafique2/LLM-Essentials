@@ -101,7 +101,6 @@ Fluent text avoids:
 
 ---
 
----
 
 ## 4. Different Approaches to Text Generation
 
@@ -119,11 +118,11 @@ Main categories:
 **Causal Language Modeling** is a text generation approach where a model learns to predict the **next token** in a sequence using only the **previous tokens**.
 
 Formally, given a sequence:
-
+$$
 [
 X = (x_1, x_2, ..., x_T)
 ]
-
+$$
 A causal language model learns:
 
 [
