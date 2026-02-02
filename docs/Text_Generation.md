@@ -1,148 +1,157 @@
-#   Text Generation in Large Language Models (LLMs)
+Below is a fully rewritten **Day 14 GitHub Markdown article** with:
 
-## 1. What is Text Generation?
+* Clean professional tone
+* Perfect GitHub-compatible math formatting
+* Proper structure and readability
+* No emojis
+* A complete Acknowledgment section
 
-**Text Generation** is the process of automatically producing meaningful and coherent text using a machine learning model.
+You can directly paste this into your repository.
 
-The output can be:
+---
 
-* A single word
-* A sentence
-* A paragraph
-* A complete document
+# Day 14: Text Generation in Large Language Models (LLMs)
 
-Examples include:
+## 1. Introduction
+
+Text generation is one of the most important capabilities of modern Natural Language Processing (NLP) systems. Large Language Models (LLMs) such as GPT, T5, and BART are designed to generate human-like text for a wide range of applications including chatbots, summarization, translation, and creative writing.
+
+This article provides a detailed explanation of how text generation works, the main categories of generation models, mathematical foundations, training objectives, and evaluation methods.
+
+---
+
+## 2. What is Text Generation?
+
+**Text Generation** is the task of automatically producing coherent and meaningful natural language text using a machine learning model.
+
+The generated output may range from:
+
+* A single token or word
+* A complete sentence
+* Multiple paragraphs
+* Entire documents
+
+Common examples include:
 
 * ChatGPT responses
+* Story and poem generation
 * Automatic summarization
 * Machine translation
-* Story and poem generation
-* AI assistants
+* AI-based assistants
 
 ---
 
-### Goal of Text Generation
+## 3. Goal of Text Generation
 
-The goal is to generate **human-like language**, meaning:
+The primary goal of text generation is to produce language that resembles human writing.
 
-> The produced text should feel natural, fluent, relevant, and logically connected — just like a human wrote it.
+A high-quality generation system should produce text that is:
 
----
-
-
-## 2. What is Human-Like Text?
-
-Human-like text refers to machine-generated text that mimics human communication.
-
-A good generation system must capture:
-
-* Meaning
-* Grammar
-* Style
-* Context
-* Intent
+* Fluent
+* Coherent
+* Contextually relevant
+* Grammatically correct
+* Logically consistent
 
 ---
 
-## 3. Properties of Human-Like Text
+## 4. Properties of Human-Like Text
 
-A high-quality text generation model must satisfy three key properties:
+A strong text generation model must satisfy three essential properties.
 
 ---
 
-###  1. Coherence
+### 4.1 Coherence
 
-**Coherence** means the ideas are logically connected and easy to follow.
+**Coherence** refers to the logical flow and connectivity of ideas across sentences.
 
-#### Example Prompt:
+Prompt:
 
 > Describe a beautiful sunset at the beach.
 
- Weak Response:
+Weak response:
 
 > The sun sets. Orange sky. Waves sound.
 
- Coherent Response:
+Coherent response:
 
-> The sky turned into a breathtaking palette of oranges and purples as the sun sank over the calm ocean, while gentle waves created a peaceful atmosphere.
+> The sky turned into a warm palette of orange and purple as the sun slowly disappeared into the ocean, while gentle waves created a calm atmosphere.
 
-Coherence ensures the text forms a meaningful flow.
+Coherence ensures the text forms a meaningful narrative.
 
 ---
 
-###  2. Fluency
+### 4.2 Fluency
 
 **Fluency** means the text is grammatically correct and naturally written.
 
 Fluent text avoids:
 
-* Broken sentences
+* Broken sentence structure
 * Awkward phrasing
 * Incorrect grammar
 
 ---
 
-###  3. Relevance
+### 4.3 Relevance
 
-**Relevance** means the generated text stays on-topic.
+**Relevance** means the generated output stays focused on the given prompt.
 
-#### Prompt:
+Prompt:
 
 > Describe a sunset at the beach.
 
- Irrelevant Output:
+Irrelevant output:
 
-> City lights flickered as traffic filled the streets.
+> Traffic lights filled the streets of the city.
 
- Relevant Output:
+Relevant output:
 
-> The golden sunlight reflected beautifully over the ocean waves.
-
----
-
-
-## 4. Different Approaches to Text Generation
-
-Text generation models depend on the nature of the task.
-
-Main categories:
-
+> The golden sunlight reflected beautifully across the ocean waves.
 
 ---
 
-## 1. **Causal Language Modeling (CLM)**
+## 5. Main Categories of Text Generation Models
 
+Modern text generation methods can be grouped into three major categories:
 
+1. Causal Language Modeling (CLM)
+2. Sequence-to-Sequence Generation (Seq2Seq)
+3. Masked Language Modeling (MLM)
 
-**Causal Language Modeling** is a text generation approach where a model learns to predict the **next token** in a sequence using only the **previous tokens**.
+---
 
-Formally, given a sequence:
+## 6. Causal Language Modeling (CLM)
+
+### 6.1 Definition
+
+**Causal Language Modeling** is an autoregressive generation approach where the model predicts the next token based only on previous tokens.
+
 Given a sequence:
 
 $$
 X = (x_1, x_2, ..., x_T)
 $$
-A causal language model learns:
+
+The model learns the probability:
 
 $$
 P(x_t \mid x_1, x_2, ..., x_{t-1})
 $$
 
-This means the model generates text autoregressively, one token at a time
-
-This means the model generates text **autoregressively**, one word at a time.
+This means generation happens left-to-right, one token at a time.
 
 ---
 
-###  Key Characteristics
+### 6.2 Key Characteristics
 
-* Left-to-right generation
-* Uses **masked self-attention**
+* Autoregressive decoding
+* Uses masked self-attention
 * Best suited for open-ended generation
 
 ---
 
-###  Examples of CLM Models
+### 6.3 Examples of CLM Models
 
 * GPT-2
 * GPT-3
@@ -151,71 +160,71 @@ This means the model generates text **autoregressively**, one word at a time.
 
 ---
 
-###  Use Cases
+### 6.4 Use Cases
 
-* Story writing
 * Chatbots
-* Code generation
-* Text completion
+* Story generation
+* Code completion
+* Creative writing
 
 ---
 
-### Example Prompt
+### 6.5 Example
 
-Input:
+Prompt:
 
 > The future of AI is
 
-Generated Output:
+Generated continuation:
 
-> the development of systems that can reason, learn, and assist humans...
-
----
+> the development of systems that can reason, learn, and assist humans.
 
 ---
 
-## 2. **Sequence-to-Sequence Generation (Seq2Seq Models)**
+## 7. Sequence-to-Sequence Generation (Seq2Seq)
 
+### 7.1 Definition
 
-
-**Sequence-to-Sequence (Seq2Seq) Generation** is a category of text generation where a model transforms an **input sequence** into a different **output sequence**.
+**Sequence-to-Sequence Generation** models transform an input sequence into a different output sequence.
 
 Formally:
 
-[
+$$
 X = (x_1, ..., x_n)
 \rightarrow
 Y = (y_1, ..., y_m)
-]
+$$
 
 The model learns:
 
-[
+$$
 P(Y \mid X)
-]
+$$
 
-Unlike causal models, Seq2Seq models generate text **conditioned on an input**, not just previous tokens.
-
----
-
-###  Key Characteristics
-
-* Uses an **Encoder + Decoder**
-* Decoder attends to encoder output via **cross-attention**
-* Best for structured transformations
+Unlike CLM, Seq2Seq models generate text conditioned on an input.
 
 ---
 
-###  Examples of Seq2Seq Models
+### 7.2 Architecture
+
+Seq2Seq models typically use:
+
+* Encoder: Processes the input
+* Decoder: Generates output tokens
+* Cross-attention: Decoder attends to encoder representations
+
+---
+
+### 7.3 Examples of Seq2Seq Models
 
 * T5
 * BART
 * Pegasus
-* Transformer Encoder–Decoder models
+* Transformer Encoder–Decoder
 
 ---
 
-###  Use Cases
+### 7.4 Use Cases
 
 * Machine translation
 * Summarization
@@ -224,49 +233,39 @@ Unlike causal models, Seq2Seq models generate text **conditioned on an input**, 
 
 ---
 
-### Example
+### 7.5 Example
 
 Input:
 
 > The article explains climate change in detail.
 
-Output Summary:
+Output summary:
 
 > Climate change is driven by greenhouse gases and affects global temperatures.
 
 ---
 
+## 8. Masked Language Modeling (MLM)
 
+### 8.1 Definition
 
-## 3. **Masked Language Modeling (MLM)**
+**Masked Language Modeling** trains a model to predict missing words using both left and right context.
 
-
-
-**Masked Language Modeling** is a training strategy where a model learns to predict missing or masked words inside a sentence by using **both left and right context**.
-
-Given an input sentence:
+Example input:
 
 > The cat sat on the [MASK].
 
-The model learns:
+The objective is:
 
-[
-P(x_{mask} \mid x_{1}, ..., x_{mask-1}, x_{mask+1}, ..., x_n)
-]
+$$
+P(x_{\text{mask}} \mid x_1, ..., x_{\text{mask}-1}, x_{\text{mask}+1}, ..., x_n)
+$$
 
-This makes MLM models **bidirectional**, meaning they understand context from all directions.
-
----
-
-###  Key Characteristics
-
-* Not naturally autoregressive
-* Focuses on language understanding
-* Used mainly for representation learning
+MLM models are bidirectional and focus more on language understanding than generation.
 
 ---
 
-###  Examples of MLM Models
+### 8.2 Examples of MLM Models
 
 * BERT
 * RoBERTa
@@ -275,16 +274,16 @@ This makes MLM models **bidirectional**, meaning they understand context from al
 
 ---
 
-###  Use Cases
+### 8.3 Use Cases
 
 * Text classification
-* Named Entity Recognition (NER)
+* Named Entity Recognition
 * Sentiment analysis
 * Information extraction
 
 ---
 
-### Example
+### 8.4 Example
 
 Input:
 
@@ -296,132 +295,64 @@ Prediction:
 
 ---
 
+## 9. Text Summarization
 
-# 4. Text Summarization
-
-**Summarization** is a high-level NLP task:
-
-> It takes a document as input and produces a shorter summary.
+Summarization is a core generation task where a long document is converted into a shorter version while preserving meaning.
 
 A good summary must be:
 
 * Fluent
 * Coherent
-* Well-structured
 * Informative
+* Relevant
 
 ---
 
-## Types of Summarization
+### 9.1 Types of Summarization
+
+#### Single Document Summarization
+
+One document as input, one summary as output.
+
+#### Multi-Document Summarization
+
+Multiple related documents combined into one summary.
 
 ---
 
-### 1. Single Document Summarization
+### 9.2 Extractive vs Abstractive Summarization
 
-Input: One article
-Output: Summary of that article
+#### Extractive Summarization
 
-Example:
+Selects sentences directly from the source:
 
-Text: Exercise improves health...
-Summary: Exercise helps control weight and reduces disease risk.
-
----
-
-### 2. Multi-Document Summarization
-
-Input: Multiple related documents
-Output: Combined summary
-
-Used in:
-
-* News aggregation
-* Research surveys
-
----
-
----
-
-## Extractive vs Abstractive Summarization
-
----
-
-### Extractive Summarization
-
-Copies key sentences directly from the input.
-
-[
+$$
 Summary \subset Input
-]
+$$
+
+#### Abstractive Summarization
+
+Generates new sentences:
+
+$$
+Summary = NewRepresentation(Input)
+$$
 
 ---
 
-### Abstractive Summarization
+## 10. Training Text Generation Models
 
-Generates new sentences in its own words.
+Text generation models are trained using supervised datasets:
 
-[
-Summary = New\ Representation(Input)
-]
-
-This is more human-like but harder.
+$$
+(Text, Target)
+$$
 
 ---
 
----
+### 10.1 Tokenization
 
-## Monolingual vs Cross-lingual Summarization
-
----
-
-### Monolingual
-
-English → English summary
-
----
-
-### Cross-lingual
-
-English → Urdu summary
-
-Example:
-
-> اچھی صحت کے لیے ورزش ضروری ہے...
-
----
-
----
-
-# 7. Training Text Generation Models
-
-Training requires supervised datasets:
-
-[
-(Text,\ Summary)
-]
-
----
-
-## Training Pipeline
-
-### Step 1 — Dataset Preparation
-
-Split into:
-
-* Train set
-* Dev/Validation set
-* Test set
-
-Common ratios:
-
-* 80/10/10
-* 90/5/5
-
----
-
-### Step 2 — Tokenization
-
-Convert raw text into token IDs:
+Raw text is converted into token IDs:
 
 ```python
 from transformers import AutoTokenizer
@@ -432,332 +363,9 @@ tokens = tokenizer("Exercise improves health", return_tensors="pt")
 
 ---
 
-### Step 3 — Training Loop
+### 10.2 Training Objective
 
-Model learns by minimizing loss:
-
-[
-Loss = -\sum log P(y_t | y_{<t}, X)
-]
-
-Training proceeds in epochs:
-
-* One full pass over training data = 1 epoch
-
----
-
-### Step 4 — Optimizer + Scheduler
-
-Popular optimizers:
-
-* Adam
-* SGD
-* AdaFactor
-
-Schedulers adjust learning rate dynamically.
-
----
-
----
-
-# 8. Inference (Generation Phase)
-
-After training, the model generates summaries for unseen inputs:
-
-```python
-summary_ids = model.generate(tokens["input_ids"])
-print(tokenizer.decode(summary_ids[0]))
-```
-
-During inference:
-
-* Model predicts token-by-token
-* Stops at `<END>` token
-
----
-
----
-
-# 9. Evaluation of Text Generation
-
-Generated summaries must be evaluated.
-
----
-
-## Automatic Metrics
-
----
-
-### ROUGE Score (Most Common)
-
-Measures n-gram overlap:
-
-* ROUGE-1 → unigram overlap
-* ROUGE-2 → bigram overlap
-* ROUGE-L → longest common subsequence
-
-[
-ROUGE = \frac{Overlap}{Reference}
-]
-
----
-
-### BLEU
-
-Mostly used in translation.
-
----
-
-### BERTScore / BARTScore
-
-Semantic evaluation using embeddings.
-
----
-
----
-
-## Human Evaluation
-
-Humans judge:
-
-* Fluency
-* Coherence
-* Relevance
-
-Often rated using Likert scales.
-
----
-
----
-
-# 10. Hugging Face Summarization Workflow
-
-Hugging Face provides end-to-end support:
-
----
-
-## Example Pipeline
-
-```python
-from transformers import pipeline
-
-summarizer = pipeline("summarization")
-
-text = """Regular exercise improves health and mental well-being..."""
-
-print(summarizer(text))
-```
-
----
-
-## Fine-tuning a Model
-
-```python
-from transformers import Trainer, TrainingArguments
-
-training_args = TrainingArguments(
-    output_dir="./results",
-    evaluation_strategy="epoch"
-)
-
-trainer = Trainer(
-    model=model,
-    args=training_args,
-    train_dataset=train_data,
-    eval_dataset=val_data
-)
-
-trainer.train()
-```
-
----
-
----
-
-# 11. Key Takeaways 
-
-* Text generation is central to modern LLMs
-* Human-like text requires coherence, fluency, relevance
-* Seq2Seq is the backbone of summarization tasks
-* Summarization can be extractive or abstractive
-* Training requires datasets, tokenization, optimization
-* Evaluation uses ROUGE + human judgment
-* Hugging Face makes generation simple and scalable
-
----
-# Acknowledgement
-
-Parts of this material are adapted from books, lecture notes, and online educational resources.
-All rights belong to their respective owners. Used strictly for educational purposes.
-
-
-Got it Minsa ✅
-Your content is excellent — the only issue is that **GitHub Markdown does not render LaTeX math unless it is written properly**.
-
-Right now, your formulas are written like:
-
-```
-[
-P(x_t \mid x_{<t})
-]
-```
-
-That is why they appear broken.
-
----
-
-# ✅ Fix: Correct Math Formatting for GitHub
-
-GitHub supports math in Markdown using:
-
-### Inline Math
-
-Use single dollar signs:
-
-```md
-$P(x_t \mid x_{<t})$
-```
-
-### Block Math
-
-Use double dollar signs:
-
-```md
-$$
-P(x_t \mid x_{<t})
-$$
-```
-
----
-
-# ✅ Corrected Version of Your Math Sections
-
-Below is the cleaned and properly formatted math part.
-You can copy-paste directly into your GitHub repo.
-
----
-
-## ✅ Causal Language Modeling (CLM)
-
-**Causal Language Modeling** predicts the next token using only previous tokens.
-
-Given a sequence:
-
-
-
-This means the model generates text **autoregressively**, one token at a time.
-
----
-
-### Example
-
-Prompt:
-
-> The future of AI is
-
-Generated:
-
-> the development of systems that can reason and assist humans...
-
----
-
----
-
-## ✅ Sequence-to-Sequence Generation (Seq2Seq)
-
-Seq2Seq models transform an input sequence into an output sequence.
-
-Formally:
-
-$$
-X = (x_1, ..., x_n)
-\rightarrow
-Y = (y_1, ..., y_m)
-$$
-
-The model learns:
-
-$$
-P(Y \mid X)
-$$
-
-Unlike causal models, Seq2Seq generation is **conditioned on the input sequence**.
-
----
-
-### Example
-
-Input:
-
-> The article explains climate change.
-
-Output:
-
-> Climate change is driven by greenhouse gases.
-
----
-
----
-
-## ✅ Masked Language Modeling (MLM)
-
-MLM predicts missing words using both left and right context.
-
-Example sentence:
-
-> The cat sat on the **[MASK]**.
-
-The model learns:
-
-$$
-P(x_{\text{mask}} \mid x_1, ..., x_{\text{mask}-1}, x_{\text{mask}+1}, ..., x_n)
-$$
-
-MLM models are **bidirectional**, meaning they use full context.
-
----
-
-### Example
-
-Input:
-
-> AI is transforming the **[MASK]** industry.
-
-Prediction:
-
-> healthcare
-
----
-
----
-
-## ✅ Extractive vs Abstractive Summarization
-
-### Extractive Summarization
-
-The summary is a subset of the original text:
-
-$$
-Summary \subset Input
-$$
-
----
-
-### Abstractive Summarization
-
-The model generates new sentences:
-
-$$
-Summary = NewRepresentation(Input)
-$$
-
----
-
----
-
-## ✅ Training Loss for Text Generation
-
-Training minimizes the negative log-likelihood:
+Models minimize negative log-likelihood loss:
 
 $$
 Loss = - \sum_{t} \log P(y_t \mid y_{<t}, X)
@@ -765,41 +373,90 @@ $$
 
 Where:
 
-* $y_t$ = target token
-* $y_{<t}$ = previously generated tokens
-* $X$ = input sequence
+* $y_t$ is the target token
+* $y_{<t}$ are previous output tokens
+* $X$ is the input sequence
 
 ---
 
+## 11. Inference and Generation Phase
+
+After training, models generate text token-by-token:
+
+```python
+summary_ids = model.generate(tokens["input_ids"])
+print(tokenizer.decode(summary_ids[0]))
+```
+
+Generation stops when an end token is reached.
+
 ---
 
-## ✅ ROUGE Score (Evaluation)
+## 12. Evaluation of Text Generation
 
-ROUGE measures overlap between generated and reference text:
+### 12.1 Automatic Metrics
+
+#### ROUGE
+
+Measures n-gram overlap:
 
 $$
 ROUGE = \frac{\text{Overlap}}{\text{Reference}}
 $$
 
+* ROUGE-1: unigram overlap
+* ROUGE-2: bigram overlap
+* ROUGE-L: longest common subsequence
+
+#### BLEU
+
+Often used for translation tasks.
+
+#### BERTScore
+
+Measures semantic similarity using embeddings.
+
 ---
 
-# ⭐ Final Tip (Important)
+### 12.2 Human Evaluation
 
-To enable math rendering on GitHub, make sure:
+Humans evaluate generated text based on:
 
-* Your repo uses GitHub's math support (default enabled)
-* Use `$$ ... $$` for block equations
-* Avoid using `[` `]` alone for math
+* Fluency
+* Coherence
+* Relevance
+* Informativeness
 
 ---
 
-# ✅ Next Step
+## 13. Key Takeaways
 
-If you want, I can do one of these for you:
+* Text generation is central to modern LLMs
+* Human-like text requires coherence, fluency, and relevance
+* CLM powers GPT-style models
+* Seq2Seq dominates translation and summarization
+* MLM models like BERT focus on representation learning
+* Evaluation uses ROUGE, BLEU, and human judgment
 
-✅ Fully rewrite the entire Day 14 markdown with perfect math formatting
-✅ Add diagrams + decoding strategies (Top-k, Beam Search)
-✅ Prepare Day 15 content directly
+---
 
-Just tell me: **Do you want the full Day 14 file cleaned completely?**
+## Acknowledgment
 
+This article is prepared for educational purposes and is inspired by a combination of:
+
+* Lecture slides and academic course material
+* Research papers on transformer-based generation models
+* Publicly available NLP documentation and tutorials
+* The Hugging Face Transformers library resources
+
+All external concepts and methods belong to their respective authors and institutions. This content is intended strictly for learning and knowledge-sharing.
+
+---
+
+If you want, I can also prepare:
+
+* Day 15: Decoding Strategies (Greedy, Beam Search, Top-k, Top-p)
+* Day 16: Fine-tuning Text Generation Models
+* A complete GitHub-ready series structure for all days
+
+Just tell me what day you want next.
