@@ -118,76 +118,15 @@ Main categories:
 
 Formally, given a sequence:
 Given a sequence:
-
-𝑋
-=
-(
-𝑥
-1
-,
-𝑥
-2
-,
-.
-.
-.
-,
-𝑥
-𝑇
-)
-X=(x
-1
-	​
-
-,x
-2
-	​
-
-,...,x
-T
-	​
-
-)
+$$
+X = (x_1, x_2, ..., x_T)
+$$
 
 A causal language model learns:
 
-𝑃
-(
-𝑥
-𝑡
-∣
-𝑥
-1
-,
-𝑥
-2
-,
-.
-.
-.
-,
-𝑥
-𝑡
-−
-1
-)
-P(x
-t
-	​
-
-∣x
-1
-	​
-
-,x
-2
-	​
-
-,...,x
-t−1
-	​
-
-)
+$$
+P(x_t \mid x_1, x_2, ..., x_{t-1})
+$$
 
 This means the model generates text autoregressively, one token at a time
 
@@ -650,4 +589,217 @@ trainer.train()
 
 Parts of this material are adapted from books, lecture notes, and online educational resources.
 All rights belong to their respective owners. Used strictly for educational purposes.
+
+
+Got it Minsa ✅
+Your content is excellent — the only issue is that **GitHub Markdown does not render LaTeX math unless it is written properly**.
+
+Right now, your formulas are written like:
+
+```
+[
+P(x_t \mid x_{<t})
+]
+```
+
+That is why they appear broken.
+
 ---
+
+# ✅ Fix: Correct Math Formatting for GitHub
+
+GitHub supports math in Markdown using:
+
+### Inline Math
+
+Use single dollar signs:
+
+```md
+$P(x_t \mid x_{<t})$
+```
+
+### Block Math
+
+Use double dollar signs:
+
+```md
+$$
+P(x_t \mid x_{<t})
+$$
+```
+
+---
+
+# ✅ Corrected Version of Your Math Sections
+
+Below is the cleaned and properly formatted math part.
+You can copy-paste directly into your GitHub repo.
+
+---
+
+## ✅ Causal Language Modeling (CLM)
+
+**Causal Language Modeling** predicts the next token using only previous tokens.
+
+Given a sequence:
+
+
+
+This means the model generates text **autoregressively**, one token at a time.
+
+---
+
+### Example
+
+Prompt:
+
+> The future of AI is
+
+Generated:
+
+> the development of systems that can reason and assist humans...
+
+---
+
+---
+
+## ✅ Sequence-to-Sequence Generation (Seq2Seq)
+
+Seq2Seq models transform an input sequence into an output sequence.
+
+Formally:
+
+$$
+X = (x_1, ..., x_n)
+\rightarrow
+Y = (y_1, ..., y_m)
+$$
+
+The model learns:
+
+$$
+P(Y \mid X)
+$$
+
+Unlike causal models, Seq2Seq generation is **conditioned on the input sequence**.
+
+---
+
+### Example
+
+Input:
+
+> The article explains climate change.
+
+Output:
+
+> Climate change is driven by greenhouse gases.
+
+---
+
+---
+
+## ✅ Masked Language Modeling (MLM)
+
+MLM predicts missing words using both left and right context.
+
+Example sentence:
+
+> The cat sat on the **[MASK]**.
+
+The model learns:
+
+$$
+P(x_{\text{mask}} \mid x_1, ..., x_{\text{mask}-1}, x_{\text{mask}+1}, ..., x_n)
+$$
+
+MLM models are **bidirectional**, meaning they use full context.
+
+---
+
+### Example
+
+Input:
+
+> AI is transforming the **[MASK]** industry.
+
+Prediction:
+
+> healthcare
+
+---
+
+---
+
+## ✅ Extractive vs Abstractive Summarization
+
+### Extractive Summarization
+
+The summary is a subset of the original text:
+
+$$
+Summary \subset Input
+$$
+
+---
+
+### Abstractive Summarization
+
+The model generates new sentences:
+
+$$
+Summary = NewRepresentation(Input)
+$$
+
+---
+
+---
+
+## ✅ Training Loss for Text Generation
+
+Training minimizes the negative log-likelihood:
+
+$$
+Loss = - \sum_{t} \log P(y_t \mid y_{<t}, X)
+$$
+
+Where:
+
+* $y_t$ = target token
+* $y_{<t}$ = previously generated tokens
+* $X$ = input sequence
+
+---
+
+---
+
+## ✅ ROUGE Score (Evaluation)
+
+ROUGE measures overlap between generated and reference text:
+
+$$
+ROUGE = \frac{\text{Overlap}}{\text{Reference}}
+$$
+
+---
+
+# ⭐ Final Tip (Important)
+
+To enable math rendering on GitHub, make sure:
+
+* Your repo uses GitHub's math support (default enabled)
+* Use `$$ ... $$` for block equations
+* Avoid using `[` `]` alone for math
+
+---
+
+# ✅ Next Step
+
+If you want, I can do one of these for you:
+
+✅ Fully rewrite the entire Day 14 markdown with perfect math formatting
+✅ Add diagrams + decoding strategies (Top-k, Beam Search)
+✅ Prepare Day 15 content directly
+
+Just tell me: **Do you want the full Day 14 file cleaned completely?**
+
